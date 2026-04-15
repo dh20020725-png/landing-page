@@ -14,3 +14,44 @@ import * as zod from "zod";
 export const HealthCheckResponse = zod.object({
   status: zod.string(),
 });
+
+/**
+ * Saves a contact message to the database
+ * @summary Submit a contact form
+ */
+export const submitContactBodyNameMax = 200;
+
+export const submitContactBodyMessageMax = 5000;
+
+export const SubmitContactBody = zod.object({
+  name: zod.string().min(1).max(submitContactBodyNameMax),
+  email: zod.string().email(),
+  message: zod.string().min(1).max(submitContactBodyMessageMax),
+});
+
+/**
+ * Returns all stored contact messages
+ * @summary List contact submissions
+ */
+export const ListContactsResponseItem = zod.object({
+  id: zod.number(),
+  name: zod.string(),
+  email: zod.string(),
+  message: zod.string(),
+  createdAt: zod.coerce.date(),
+});
+export const ListContactsResponse = zod.array(ListContactsResponseItem);
+
+/**
+ * Sends a message to the chatbot and returns a response
+ * @summary Send a chat message
+ */
+export const sendChatMessageBodyMessageMax = 1000;
+
+export const SendChatMessageBody = zod.object({
+  message: zod.string().min(1).max(sendChatMessageBodyMessageMax),
+});
+
+export const SendChatMessageResponse = zod.object({
+  reply: zod.string(),
+});

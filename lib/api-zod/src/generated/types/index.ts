@@ -6,4 +6,9 @@
  * OpenAPI spec version: 0.1.0
  */
 
+export * from "./chatInput";
+export * from "./chatResponse";
+export * from "./contactFormInput";
+export * from "./contactMessage";
+export * from "./errorResponse";
 export * from "./healthStatus";

@@ -1,0 +1,134 @@
+Build a full-stack, production-ready responsive landing page application that runs entirely in a browser-based development environment (like StackBlitz, Replit, or similar).
+
+TECH STACK (STRICT):
+- Framework: Next.js (App Router)
+- Language: TypeScript
+- Styling: Tailwind CSS
+- Backend: Next.js API Routes (full-stack in same project)
+- Database: SQLite using Prisma ORM (must work locally inside browser-based environment)
+- Form handling: API routes
+- Optional AI feature: simple chatbot using OpenAI API (if key exists, otherwise fallback to FAQ logic)
+
+PROJECT GOAL:
+Create a modern, high-conversion landing page for a service-based IT company that generates leads and captures user inquiries.
+
+---
+
+FRONTEND REQUIREMENTS:
+
+1. HERO SECTION
+- Strong headline (modern SaaS style)
+- Subheading describing value proposition
+- 2 CTA buttons:
+  - "Get a Free Quote"
+  - "Contact Us"
+- Clean gradient background
+- Responsive layout (mobile-first)
+
+2. SERVICES SECTION
+- 4 service cards:
+  - Full Stack Development
+  - AI Chatbots
+  - Payment Integration
+  - AI Search Systems
+- Each card has icon, title, short description
+
+3. ABOUT SECTION
+- Short company description
+- Trust-focused messaging
+- Minimal design
+
+4. CONTACT SECTION (IMPORTANT)
+- Form fields:
+  - name
+  - email
+  - message
+- Submit button
+- On submit:
+  - send data to backend API route
+  - show success message
+  - prevent duplicate submissions
+
+5. OPTIONAL CHATBOT WIDGET
+- Floating chat button
+- Simple chat UI
+- If OpenAI API key is available:
+  - respond intelligently based on website services
+- Otherwise:
+  - use predefined FAQ responses
+
+---
+
+BACKEND REQUIREMENTS (NEXT.JS API ROUTES):
+
+Create API endpoints:
+
+1. POST /api/contact
+- Save form submissions to database
+- Validate input
+- Return success/failure response
+
+2. GET /api/contact (optional admin/debug)
+- Return stored leads
+
+---
+
+DATABASE (PRISMA + SQLITE):
+
+Create a "ContactMessage" model:
+
+Fields:
+- id (auto increment)
+- name (string)
+- email (string)
+- message (string)
+- createdAt (timestamp)
+
+Ensure Prisma is properly configured and migrations run automatically.
+
+Database must work inside local browser-based environment without external services.
+
+---
+
+UI/UX REQUIREMENTS:
+
+- Modern SaaS-style design
+- Clean spacing and typography
+- Smooth hover effects
+- Responsive for mobile, tablet, desktop
+- Dark/light friendly styling (optional)
+- Use subtle gradients and soft shadows
+- High conversion focus (CTA buttons visible at all times)
+
+---
+
+DEPLOYMENT READINESS:
+
+Project must be:
+- fully runnable with "npm install" and "npm run dev"
+- no missing dependencies
+- no external backend services required
+- self-contained full-stack app
+
+---
+
+BONUS (IF POSSIBLE):
+
+- Add toast notifications for form submission
+- Add loading states on buttons
+- Add basic analytics placeholder function
+- Add SEO meta tags
+- Add reusable components structure
+
+---
+
+FINAL OUTPUT:
+Generate complete project structure with:
+- frontend pages/components
+- API routes
+- prisma schema
+- database connection setup
+- tailwind configuration
+- working contact form integration
+
+Make sure everything works together seamlessly in a single browser-run development environment.
